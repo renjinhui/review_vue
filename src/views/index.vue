@@ -48,6 +48,7 @@ export default {
     display: flex;
     height: 50px;
     align-items: center;
+    border-bottom: 1px solid #eee;
     div {
       flex: 1;
       text-align: center;
