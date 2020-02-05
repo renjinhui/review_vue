@@ -45,6 +45,10 @@ const routes = [
     ]
   },
   {
+    path:'/login',
+    component:()=>import(/* webpackChunkName: "login" */ '../views/login.vue')
+  },
+  {
     path:'*',
     redirect:'/yqdt'
   }
