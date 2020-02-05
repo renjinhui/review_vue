@@ -25,22 +25,22 @@ const routes = [
       {
         path: '/yqdt',
         name: 'yqdt',
-        component: () => import(/* webpackChunkName: "yqdt" */ '../views/Home.vue')
+        component: () => import(/* webpackChunkName: "yqdt" */ '../components/yqdt')
       },
       {
         path: '/qxmap',
         name: 'qxmap',
-        component: () => import(/* webpackChunkName: "qxmap" */ '../views/About.vue')
+        component: () => import(/* webpackChunkName: "qxmap" */ '../components/qxmap')
       },
       {
         path: '/hotsearch',
         name: 'hotsearch',
-        component: () => import(/* webpackChunkName: "hotsearch" */ '../views/About.vue')
+        component: () => import(/* webpackChunkName: "hotsearch" */ '../components/hotsearch')
       },
       {
         path: '/news',
         name: 'news',
-        component: () => import(/* webpackChunkName: "news" */ '../views/About.vue')
+        component: () => import(/* webpackChunkName: "news" */ '../components/news')
       }
     ]
   },
