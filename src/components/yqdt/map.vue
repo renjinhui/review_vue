@@ -6,48 +6,27 @@
 <script>
 // @ is an alias to /src
 import echarts from 'echarts'
+import 'echarts/map/js/china.js'
 var option2 = {
-      title: {
-        text: 'iphone销量',
-        subtext: '纯属虚构',
-        x: 'center'
-      },
       tooltip: {
         trigger: 'item'
       },
       legend: {
         orient: 'vertical',
-        x: 'right',
-        y:'60%',
-        data: ['iphone3', 'iphone4', 'iphone5']
+        x: 'left',
+        y:'bottom',
+        data: ['>1000', '100-999', '10-99','1-9']
       },
+    
       dataRange: {
         min: 0,
         max: 2500,
         x: 'left',
         y: 'bottom',
         text: ['高', '低'], // 文本，默认为数值文本
-        calculable: true
-      },
-      toolbox: {
-        show: true,
-        orient: 'vertical',
-        x: 'right',
-        y: 'center',
-        feature: {
-          mark: {
-            show: true
-          },
-          dataView: {
-            show: true,
-            readOnly: false
-          },
-          restore: {
-            show: true
-          },
-          saveAsImage: {
-            show: true
-          }
+        calculable: true,
+        inRange: {
+            color: ['#7f1818', '#bf2121', '#ff7b69','#ffaa85']
         }
       },
       roamController: {
@@ -59,10 +38,10 @@ var option2 = {
       },
       series: [
         {
-          name: 'iphone3',
+          name: '>1000',
           type: 'map',
+          roam: false,
           mapType: 'china',
-          roam: true,
           itemStyle: {
             normal: {
               label: {
@@ -215,7 +194,7 @@ var option2 = {
           ]
         },
         {
-          name: 'iphone4',
+          name: '100-999',
           type: 'map',
           mapType: 'china',
           itemStyle: {
@@ -310,7 +289,54 @@ var option2 = {
           ]
         },
         {
-          name: 'iphone5',
+          name: '10-99',
+          type: 'map',
+          mapType: 'china',
+          itemStyle: {
+            normal: {
+              label: {
+                show: true
+              }
+            },
+            emphasis: {
+              label: {
+                show: true
+              }
+            }
+          },
+          data: [
+            {
+              name: '北京',
+              value: Math.round(Math.random() * 1000)
+            },
+            {
+              name: '天津',
+              value: Math.round(Math.random() * 1000)
+            },
+            {
+              name: '上海',
+              value: Math.round(Math.random() * 1000)
+            },
+            {
+              name: '广东',
+              value: Math.round(Math.random() * 1000)
+            },
+            {
+              name: '台湾',
+              value: Math.round(Math.random() * 1000)
+            },
+            {
+              name: '香港',
+              value: Math.round(Math.random() * 1000)
+            },
+            {
+              name: '澳门',
+              value: Math.round(Math.random() * 1000)
+            }
+          ]
+        },
+        {
+          name: '1-9',
           type: 'map',
           mapType: 'china',
           itemStyle: {

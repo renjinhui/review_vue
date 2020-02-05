@@ -21,7 +21,6 @@
 // @ is an alias to /src
 import china_domestic from './china_domestic.vue'
 import mymap from './map'
-import 'echarts/map/js/china.js'
 export default {
     name: 'yqdt',
     data() {
