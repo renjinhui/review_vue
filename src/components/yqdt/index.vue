@@ -11,7 +11,6 @@
             <el-button>肺炎权威解读</el-button>
             <el-button>免费问医生</el-button>
         </div>
-        疫情动态
         <div>
             <mymap></mymap>
         </div>
