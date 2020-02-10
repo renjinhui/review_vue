@@ -156,6 +156,10 @@ export default {
       options.series.forEach((item,index)=>{
         item.name = this.data[index].til;
         item.data = this.data[index].list;
+        if(this.data[index].color){
+          item.itemStyle.normal.color = this.data[index].color
+          item.itemStyle.normal.lineStyle.color = this.data[index].color
+        }
       })
     }
   },

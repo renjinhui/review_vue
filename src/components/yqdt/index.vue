@@ -23,6 +23,10 @@
         <div>
             <myline title="全国 累计治愈/死亡 趋势图" :data='dataList3'></myline>
         </div>
+
+        <div>
+            <mytable></mytable>
+        </div>
     </div>
 </template>
 <script>
@@ -31,6 +35,7 @@ import china_domestic from './china_domestic.vue'
 import {getChinaData} from '@/api'
 import mymap from './map'
 import myline from './line'
+import mytable from './mytable.vue'
 export default {
     name: 'yqdt',
     data() {
@@ -71,12 +76,12 @@ export default {
             let sureList = list.map(item=>item.cn_cureNum);
             let notSureList = list.map(item => item.cn_deathNum);
             return [
-                {til:"治愈",list:sureList},{til:"死亡",list:notSureList}
+                {til:"治愈",list:sureList,color:'#10aeb5'},{til:"死亡",list:notSureList,color:"#444"}
             ]
         }
     },
     components: {
-        china_domestic,mymap,myline
+        china_domestic,mymap,myline,mytable
     }
 }
 </script>
