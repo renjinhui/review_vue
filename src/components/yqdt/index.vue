@@ -14,6 +14,9 @@
         <div>
             <mymap></mymap>
         </div>
+        <div>
+            <myline title="全国疫情图" :data='dataList'></myline>
+        </div>
     </div>
 </template>
 <script>
@@ -21,11 +24,12 @@
 import china_domestic from './china_domestic.vue'
 import {getChinaData} from '@/api'
 import mymap from './map'
+import myline from './line'
 export default {
     name: 'yqdt',
     data() {
         return {
-        
+            // dataList:[{til:"新增确认",list:[1,2,3,4]},{til:"新增疑似",list:[4,5,6,4,6]}]
         }
     },
     created() {
@@ -34,8 +38,20 @@ export default {
             this.$store.dispatch('getChinaData',data)
         })
     },
+    computed: {
+        dataList(){
+            let history = this.$store.state.china_data.historylist||[];
+            let list = history.slice(0,10);
+            let sureList = list.map((item, index) => item.cn_conNum - history[index + 1].cn_conNum);
+            let notSureList = list.map(item => item.wjw_susNum);
+            
+            return [
+                {til:"新增确认",list:sureList},{til:"新增疑似",list:notSureList}
+            ]
+        }
+    },
     components: {
-        china_domestic,mymap
+        china_domestic,mymap,myline
     }
 }
 </script>

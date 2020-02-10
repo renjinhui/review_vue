@@ -4,7 +4,6 @@
 </div>
     
 </template>
-<script src='https://interface.sina.cn/news/wap/fymap2020_data.d.json?_=1580892522427&callback=qqq'></script>
 <script>
 // @ is an alias to /src
 import echarts from 'echarts'
@@ -30,9 +29,9 @@ var option = {
         ]
       },
       pieces: [
-        { min: 1000 },
-        { min: 500, max: 999 },
-        { min: 100, max: 499 },
+        { min: 10000 },
+        { min: 1000, max: 9999 },
+        { min: 100, max: 999 },
         { min: 10, max: 99 },
         { min: 1, max: 9 }
       ],
@@ -125,7 +124,14 @@ export default {
         let mydata = list.map(item=>({name:item.name,value:item.value/1}));
         option.series[0].data = mydata;
         this.echart = echarts.init(this.$refs.mapBox);
-        this.echart.setOption(option)
+        this.echart.setOption(option);
+        this.click();
+      },
+      click(){
+        this.echart.on('click',function(){
+console.log(arguments)
+        })
+        
       }
     },
     components: {
