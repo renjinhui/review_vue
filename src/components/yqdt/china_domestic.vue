@@ -9,28 +9,28 @@
                 <div class="num">{{china_data.gntotal}}</div>
                 <div class="type">确诊病例</div>
                 <div class="add">昨日
-                    <span>+{{china_data.add_daily.addcon}}</span>
+                    <span>+{{china_data.add_daily&&china_data.add_daily.addcon}}</span>
                 </div>
             </div>
             <div class="doubt">
                 <div class="num">{{china_data.sustotal}}</div>
                 <div class="type">疑似病例</div>
                 <div class="add">昨日
-                    <span>+{{china_data.add_daily.wjw_addsus}}</span>
+                    <span>+{{china_data.add_daily&&china_data.add_daily.wjw_addsus}}</span>
                 </div>
             </div>
             <div class="healthy">
                 <div class="num">{{china_data.curetotal}}</div>
                 <div class="type">治愈病例</div>
                 <div class="add">昨日
-                    <span>+{{china_data.add_daily.addcure}}</span>
+                    <span>+{{china_data.add_daily&&china_data.add_daily.addcure}}</span>
                 </div>
             </div>
             <div class="dead">
                 <div class="num">{{china_data.deathtotal}}</div>
                 <div class="type">死亡病例</div>
                 <div class="add">昨日
-                    <span>+{{china_data.add_daily.adddeath}}</span>
+                    <span>+{{china_data.add_daily&&china_data.add_daily.adddeath}}</span>
                 </div>
             </div>
         </div>

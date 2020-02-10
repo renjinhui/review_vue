@@ -1,7 +1,8 @@
 <template>
-    <div ref='mapBox' style='width:700px;height:500px'>
-        
-    </div>
+<div>
+  <div ref='mapBox' style='width:700px;height:500px'></div>
+</div>
+    
 </template>
 <script src='https://interface.sina.cn/news/wap/fymap2020_data.d.json?_=1580892522427&callback=qqq'></script>
 <script>
@@ -85,7 +86,7 @@ export default {
       
     },
     methods: {
-      getData(){
+      /* getData(){
         $.ajax({
           url:'https://interface.sina.cn/news/wap/fymap2020_data.d.json?_=1580892522427',
           dataType:'jsonp',
@@ -97,20 +98,35 @@ export default {
             this.echart.setOption(option)
           }
         })
-      },
-      getData2(){
+      }, */
+      /* getData2(){
         jsonp('https://interface.sina.cn/news/wap/fymap2020_data.d.json?_=1580892522427',{},(err,data)=>{
           let mydata = data.data.list.map(item=>({name:item.name,value:item.value/1}));
           console.log(mydata)
           option.series[0].data = mydata;
           this.echart.setOption(option)
         })
-      }
+      } */
     },
     mounted() {
-      this.echart = echarts.init(this.$refs.mapBox);
       // this.echart.setOption(option)
-      this.getData2();
+      // this.getData2();
+      this.initMap()
+    },
+    methods: {
+      initMap(){
+        let list = this.$store.state.china_data.list||[];
+        if(!list.length){
+          setTimeout(() => {
+            this.initMap();
+          }, 100);
+          return;
+        }
+        let mydata = list.map(item=>({name:item.name,value:item.value/1}));
+        option.series[0].data = mydata;
+        this.echart = echarts.init(this.$refs.mapBox);
+        this.echart.setOption(option)
+      }
     },
     components: {
         
