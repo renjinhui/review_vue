@@ -57,7 +57,7 @@ export default {
             let notSureList = list.map(item => item.wjw_susNum);
             
             return [
-                {til:"新增确认",list:sureList.reverse()},{til:"新增疑似",list:notSureList.reverse()}
+                {til:"新增确认",list:sureList.reverse(),color: "#e83132"},{til:"新增疑似",list:notSureList.reverse(),color: "#ec9217"}
             ]
         },
         dataList2(){
@@ -67,7 +67,7 @@ export default {
             let notSureList = list.map(item => item.cn_susNum);
             
             return [
-                {til:"确诊",list:sureList},{til:"疑似",list:notSureList}
+                {til:"确诊",list:sureList,color: "#e83132"},{til:"疑似",list:notSureList,color: "#ec9217"}
             ]
         },
         dataList3(){
