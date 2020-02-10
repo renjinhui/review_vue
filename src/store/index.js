@@ -5,18 +5,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    count:123
+    china_data:{}
   },
   mutations: {
-    addCount(state,options){
-      state.count += options.num
+    getChinaData(state,options){
+      state.china_data = options;
     }
   },
   actions: {
-    addCountAsync({commit},options){
-      setTimeout(() => {
-        commit('addCount',options)
-      }, 2000);
+    getChinaData({commit},options){
+      commit('getChinaData',options)
     }
   },
   modules: {

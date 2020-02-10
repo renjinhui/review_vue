@@ -19,6 +19,7 @@
 <script>
 // @ is an alias to /src
 import china_domestic from './china_domestic.vue'
+import {getChinaData} from '@/api'
 import mymap from './map'
 export default {
     name: 'yqdt',
@@ -26,6 +27,12 @@ export default {
         return {
         
         }
+    },
+    created() {
+        // 把后台给的数据存储到 vuex中
+        getChinaData().then((data)=>{
+            this.$store.dispatch('getChinaData',data)
+        })
     },
     components: {
         china_domestic,mymap
