@@ -159,6 +159,13 @@ export default {
       })
     }
   },
+  // watch: {
+  //   name(newV,oldV){},
+  //   obj:{
+  //     deep:true,
+  //     handler(){}
+  //   }
+  // },
   components: {}
 };
 </script>

@@ -15,7 +15,13 @@
             <mymap></mymap>
         </div>
         <div>
-            <myline title="全国疫情图" :data='dataList'></myline>
+            <myline title="全国 新增确诊/疑似 趋势图" :data='dataList'></myline>
+        </div>
+        <div>
+            <myline title="全国 累计确诊/疑似 趋势图" :data='dataList2'></myline>
+        </div>
+        <div>
+            <myline title="全国 累计治愈/死亡 趋势图" :data='dataList3'></myline>
         </div>
     </div>
 </template>
@@ -46,7 +52,26 @@ export default {
             let notSureList = list.map(item => item.wjw_susNum);
             
             return [
-                {til:"新增确认",list:sureList},{til:"新增疑似",list:notSureList}
+                {til:"新增确认",list:sureList.reverse()},{til:"新增疑似",list:notSureList.reverse()}
+            ]
+        },
+        dataList2(){
+            let history = this.$store.state.china_data.historylist||[];
+            let list = history.slice(0,10).reverse();
+            let sureList = list.map(item=>item.cn_conNum);
+            let notSureList = list.map(item => item.cn_susNum);
+            
+            return [
+                {til:"确诊",list:sureList},{til:"疑似",list:notSureList}
+            ]
+        },
+        dataList3(){
+            let history = this.$store.state.china_data.historylist||[];
+            let list = history.slice(0,10).reverse();
+            let sureList = list.map(item=>item.cn_cureNum);
+            let notSureList = list.map(item => item.cn_deathNum);
+            return [
+                {til:"治愈",list:sureList},{til:"死亡",list:notSureList}
             ]
         }
     },
