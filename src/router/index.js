@@ -25,21 +25,33 @@ const routes = [
       {
         path: '/yqdt',
         name: 'yqdt',
+        meta:{
+          til:"疫情动态"
+        },
         component: () => import(/* webpackChunkName: "yqdt" */ '../components/yqdt')
       },
       {
         path: '/qxmap',
         name: 'qxmap',
+        meta:{
+          til:"迁徙地图"
+        },
         component: () => import(/* webpackChunkName: "qxmap" */ '../components/qxmap')
       },
       {
         path: '/hotsearch',
         name: 'hotsearch',
+        meta:{
+          til:"疫情热搜"
+        },
         component: () => import(/* webpackChunkName: "hotsearch" */ '../components/hotsearch')
       },
       {
         path: '/news',
         name: 'news',
+        meta:{
+          til:"实时播报"
+        },
         component: () => import(/* webpackChunkName: "news" */ '../components/news')
       }
     ]
