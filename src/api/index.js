@@ -15,3 +15,15 @@ export function moveInOut(){
     return data.json();
   })
 }
+
+export function getHotData(){
+  return new Promise((res,rej)=>{
+    jsonp('https://opendata.baidu.com/api.php?query=%E5%85%A8%E5%9B%BD&resource_id=39258&tn=wisetpl&format=json',{param:'cb'},(err,data)=>{
+        if(err){
+          rej()
+        }else{
+          res(data.data);
+        }
+    })
+  })
+}
