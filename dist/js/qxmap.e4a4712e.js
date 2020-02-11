@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["qxmap"],{ce96:function(n,e,t){"use strict";t.r(e);var a=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",[n._v(" 迁徙地图 ")])},c=[],u={name:"qxmap",data:function(){return{}},components:{}},o=u,r=t("2877"),l=Object(r["a"])(o,a,c,!1,null,null,null);e["default"]=l.exports}}]);
-//# sourceMappingURL=qxmap.e4a4712e.js.map

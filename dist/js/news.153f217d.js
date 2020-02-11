@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["news"],{"46d7":function(n,e,t){"use strict";t.r(e);var s=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",[n._v(" 实时直播 ")])},u=[],a={name:"news",data:function(){return{}},components:{}},c=a,o=t("2877"),r=Object(o["a"])(c,s,u,!1,null,null,null);e["default"]=r.exports}}]);
-//# sourceMappingURL=news.153f217d.js.map

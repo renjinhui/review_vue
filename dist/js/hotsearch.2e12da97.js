@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["hotsearch"],{db74:function(n,e,t){"use strict";t.r(e);var a=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",[n._v(" 全民热搜 ")])},c=[],o={name:"hotsearch",data:function(){return{}},components:{}},r=o,s=t("2877"),u=Object(s["a"])(r,a,c,!1,null,null,null);e["default"]=u.exports}}]);
-//# sourceMappingURL=hotsearch.2e12da97.js.map
