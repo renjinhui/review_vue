@@ -10,3 +10,8 @@ export function getChinaData(){
     })
   })
 }
+export function moveInOut(){
+  return fetch('https://huiyan.baidu.com/openapi/v1/migration/rank?type=move&ak=kgD2HiDnLdUhwzd3CLuG5AWNfX3fhLYe&adminType=country&name=%E5%85%A8%E5%9B%BD').then((data)=>{
+    return data.json();
+  })
+}
