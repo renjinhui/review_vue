@@ -2,7 +2,9 @@
     <div class='qxmapBox'>
         <h1>全国迁徙热门城市</h1>
         <pre><div class='timeBox'>2020.2.9更新  来自百度地图</div></pre>
-        <switchtab></switchtab>
+        <switchtab 
+            :list="['热门迁入地','热门迁出地']" 
+            @change='change'></switchtab>
         迁徙地图
     </div>
 </template>
@@ -21,6 +23,11 @@ export default {
         moveInOut().then(data=>{
             console.log(data)
         })
+    },
+    methods: {
+        change(index,item){
+            console.log(index,item)
+        }
     },
     components: {
         switchtab
