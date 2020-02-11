@@ -1,0 +1,70 @@
+<template>
+  <div class='time_line_box'>
+    <div class='time_box'>
+      02月11日 13:45
+    </div>
+    <div class='text_box'>
+      <a href='https://baidu.com'>国家卫生委员会</a>
+    </div>
+  </div>
+</template>
+<script>
+// @ is an alias to /src
+export default {
+  name: "timeline",
+  data() {
+    return {};
+  },
+  components: {}
+};
+</script>
+<style lang="less">
+.time_line_box {
+  padding-left: 20px;
+  padding-bottom: 10px;
+  .time_box {
+    color: #999;
+    font-size: 14px;
+    position: relative;
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #48b9cd;
+      box-shadow: 0px 0px 0px 3px rgb(127, 217, 233);
+      left: -16px;
+      top: 7px;
+    }
+  }
+  .text_box{
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    background: #f1f1f1;
+    padding-left: 10px;
+    box-sizing: border-box;
+    margin: 7px 0;
+    position: relative;
+    a{
+      color: #333;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      display: block;
+    }
+    &::before{
+      content:'';
+      display: block;
+      position: absolute;
+      width: 1px;
+      height: 65px;
+      background: #eee;
+      top: -7px;
+      left: -14px;
+    }
+  }
+}
+</style>
